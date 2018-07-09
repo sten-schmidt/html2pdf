@@ -1,0 +1,9 @@
+h1 {
+    color: lightseagreen;
+    font-style: italic;
+    font-family: 'Arial Rounded MT';
+}
+
+.page-break {
+    page-break-after: always;
+}

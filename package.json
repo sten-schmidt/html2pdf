@@ -1,0 +1,18 @@
+{
+  "name": "html2pdf",
+  "version": "1.0.0",
+  "description": "A simple commandline HTML to PDF converter using node and puppeteer",
+  "main": "html2pdf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sten Schmidt",
+  "license": "MIT",
+  "dependencies": {
+    "@log4js-node/log4js-api": "^1.0.0",
+    "file-url": "^2.0.2",
+    "log4js": "^2.10.0",
+    "optimist": "^0.6.1",
+    "puppeteer": "^1.5.0"
+  }
+}
