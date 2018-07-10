@@ -16,7 +16,7 @@ const fileUrl = require('file-url');
 module.exports = {
 
     /**
-     * Resolves a relative to absolute a path. Optional to File-URL
+     * Resolves a relative to a absolute path. Optional to File-URL
      * @param {string} filePath
      * @param {boolean} toFileUrl
      */

@@ -28,7 +28,7 @@ Parameters:
         is resolved relative to current working directory.
 
 Optional parameters:
-    -css=CSS_PATH
+    --css=CSS_PATH
         URL to a webressource or path to a local CSS file. Additional CSS styles
         will applyed before pdf generation. URL must start with 'http'. A path 
         to a local file is automatically converted into file:/// syntax.
