@@ -8,7 +8,7 @@
 const args = require('optimist').argv
 const log4js = require('log4js');
 const logger = log4js.getLogger();
-const html2PdfLib = require('./html2pdflib');
+const html2PdfLib = require('./Html2PdfLib');
 
 (async () => {
 
