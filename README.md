@@ -9,7 +9,7 @@ A simple commandline HTML to PDF converter using node and puppeteer
     node .\html2pdf.js --help
     
 ## Usage
-Usage: node html2pdf.js --html=&lt;HtmlFile&gt; --pdf=&lt;PdfFile&gt; &lt;optional parameters&gt;
+    node html2pdf.js --html=&lt;HtmlFile&gt; --pdf=&lt;PdfFile&gt; &lt;optional parameters&gt;
 
 ### Parameters:
 
