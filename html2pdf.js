@@ -101,7 +101,7 @@ Exit-Codes:
         log4js.configure({
             appenders: {
                 html2pdflog: { type: 'file', filename: args.logfile },
-                out: { type: 'stdout' }
+                out: { type: 'stdout', layout: { type: "basic" }}
             },
             categories: {
                 default: { appenders: ['out', 'html2pdflog'], level: args.loglevel }
