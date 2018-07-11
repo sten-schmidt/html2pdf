@@ -114,7 +114,7 @@ Exit-Codes:
             args.landscape, args.pageRanges, args.format, args.width, args.height, args.margintop,
             args.marginright, args.marginbottom, args.marginleft, args.emulateScreen);
 
-        result ? process.exitCode = 0 : process.exitCode = 1;
+        process.exitCode = result ? 0 : 1;
 
     } catch (e) {
         logger.error(e);
