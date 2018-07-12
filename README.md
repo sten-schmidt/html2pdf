@@ -5,7 +5,7 @@ A simple commandline HTML to PDF converter using node and puppeteer
 
     git clone https://github.com/sten-schmidt/html2pdf.git
     cd .\html2pdf\
-    npm update
+    npm install
     node .\html2pdf.js --help
     
 ## Usage
