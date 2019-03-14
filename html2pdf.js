@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * @name Html2Pdf
  * @description Html2Pdf - A simple commandline HTML to PDF converter using node and puppeteer
@@ -5,7 +7,7 @@
  * @version 1.0
  */
 
-const args = require('optimist').argv
+const args = require('optimist').argv;
 const log4js = require('log4js');
 const logger = log4js.getLogger();
 const html2PdfLib = require('./Html2PdfLib');
@@ -90,13 +92,13 @@ Exit-Codes:
     - In case of error: 1
 `;
 
-        if (typeof args.help != "undefined" || typeof args.html == "undefined" || typeof args.pdf == "undefined") {
+        if (typeof args.help !== "undefined" || typeof args.html === "undefined" || typeof args.pdf === "undefined") {
             console.log(help);
             process.exit();
         }
 
-        if (typeof args.loglevel == "undefined") args.loglevel = "info";
-        if (typeof args.logfile == "undefined") args.logfile = "html2pdf.log";
+        if (typeof args.loglevel === "undefined") args.loglevel = "info";
+        if (typeof args.logfile === "undefined") args.logfile = "html2pdf.log";
 
         log4js.configure({
             appenders: {
@@ -105,7 +107,7 @@ Exit-Codes:
             },
             categories: {
                 default: { appenders: ['out', 'html2pdflog'], level: args.loglevel }
-            },
+            }
         });
 
         var result = false;
