@@ -14,5 +14,10 @@
     "log4js": "^2.10.0",
     "optimist": "^0.6.1",
     "puppeteer": "^1.13.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.6",
+    "crc": "^3.8.0",
+    "mocha": "^6.0.2"
   }
 }
