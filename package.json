@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "A simple commandline HTML to PDF converter using node and puppeteer",
   "main": "html2pdf.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": { "test": "jasmine" },
   "author": "Sten Schmidt",
   "license": "MIT",
   "dependencies": {
