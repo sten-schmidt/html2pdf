@@ -16,8 +16,7 @@
     "puppeteer": "^1.13.0"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.6",
-    "crc": "^3.8.0",
-    "mocha": "^6.0.2"
+    "@types/jasmine": "^3.3.12",
+    "jasmine": "^3.4.0"
   }
 }
