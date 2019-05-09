@@ -1,23 +1,14 @@
 "use strict";
-/*
- * Jasmine Testfile
- */
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
 const fs = require("fs");
-const crypto = require("crypto");
-function checksum(str, algorithm, encoding) {
-    return crypto
-        .createHash(algorithm || 'md5')
-        .update(str, 'utf8')
-        .digest(encoding || 'hex');
-}
-describe('Test Suite Html2PdfLib', () => {
+const CheckSum_1 = require("../../Tools/CheckSum");
+describe('Html2PdfLib', () => {
     it('example1_More_CSS', async () => {
-        var html = path.resolve(__dirname, '..', 'Examples', 'Example1', 'index.html');
-        var css = path.resolve(__dirname, '..', 'Examples', 'Example1', 'more.css');
-        var pdf = path.resolve(__dirname, '..', 'TestOutput', 'example1_More_CSS.pdf');
-        const html2PdfLib = require('../Html2PdfLib');
+        var html = path.resolve(__dirname, '../..', 'Examples', 'Example1', 'index.html');
+        var css = path.resolve(__dirname, '../..', 'Examples', 'Example1', 'more.css');
+        var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_More_CSS.pdf');
+        const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, css, pdf);
         expect(result).toBe(true);
         var fileContent = fs.readFileSync(pdf, 'latin1');
@@ -29,13 +20,14 @@ describe('Test Suite Html2PdfLib', () => {
                 fileContent2 += lines[i];
             }
         }
-        var chksum = checksum(fileContent2, 'sha1', 'hex');
+        var checksum = new CheckSum_1.CheckSum();
+        var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
         expect(chksum).toBe("4aa8736791d977e8127b78afec61b5bb2d61528b");
     });
     it('example1_No_seperate_CSS', async () => {
-        var html = path.resolve(__dirname, '..', 'Examples', 'Example1', 'index.html');
-        var pdf = path.resolve(__dirname, '..', 'TestOutput', 'example1_No_seperate_CSS.pdf');
-        const html2PdfLib = require('../Html2PdfLib');
+        var html = path.resolve(__dirname, '../..', 'Examples', 'Example1', 'index.html');
+        var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_No_seperate_CSS.pdf');
+        const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, undefined, pdf);
         expect(result).toBe(true);
         var fileContent = fs.readFileSync(pdf, 'latin1');
@@ -47,7 +39,8 @@ describe('Test Suite Html2PdfLib', () => {
                 fileContent2 += lines[i];
             }
         }
-        var chksum = checksum(fileContent2, 'sha1', 'hex');
+        var checksum = new CheckSum_1.CheckSum();
+        var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
         expect(chksum).toBe("f72e95bc49f7b1c848c4fcc57696657a46d99fba");
     });
 });

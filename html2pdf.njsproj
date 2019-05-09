@@ -70,6 +70,9 @@
     <Folder Include="Converter\" />
     <Folder Include="TestOutput\" />
     <Folder Include="Tests\" />
+    <Folder Include="Tests\CheckSum\" />
+    <Folder Include="Tests\HtmlPrintLib\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Converter\Converter.ts">
@@ -78,9 +81,16 @@
     <TypeScriptCompile Include="Converter\PuppeteerConverter.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Tests\Html2PdfLibTests.ts">
+    <TypeScriptCompile Include="Tests\CheckSum\CheckSumTests.ts">
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tests\HtmlPrintLib\Html2PdfLibTests.ts">
+      <SubType>Code</SubType>
+      <TestFramework>Jasmine</TestFramework>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tools\CheckSum.ts">
+      <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
