@@ -4,7 +4,7 @@
  * @name Html2Pdf
  * @description Html2Pdf - A simple commandline HTML to PDF converter using node and puppeteer
  * @author Sten Schmidt
- * @version 1.0
+ * @version 2.0
  */
 
 const args = require('optimist').argv;
@@ -81,6 +81,10 @@ Optional parameters:
         formatted print date, 'title' document title, 'url document location,
         'pageNumber' current page number, 'totalPages' total pages in the 
         document.
+    --viewportheight
+        Viewport: set page height in pixels, default 1024
+    --viewportwidth
+        Viewport: set page width in pixels, default 1200
     --loglevel=LOGLEVEL
         Set loglevel, possible loglevels are: debug, info, error, fatal, off. 
         Default is info.
@@ -114,7 +118,8 @@ Exit-Codes:
         result = await html2PdfLib.convertHtml(args.html, args.css, args.pdf, args.scale,
             args.displayHeaderFooter, args.headerTemplate, args.footerTemplate, args.printBackground,
             args.landscape, args.pageRanges, args.format, args.width, args.height, args.margintop,
-            args.marginright, args.marginbottom, args.marginleft, args.emulateScreen);
+            args.marginright, args.marginbottom, args.marginleft, args.emulateScreen,
+            args.viewportheight, args.viewportwidth);
 
         process.exitCode = result ? 0 : 1;
 

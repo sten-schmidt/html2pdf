@@ -61,6 +61,9 @@
     <Content Include="Examples\Example1\index.css" />
     <Content Include="Examples\Example1\index.html" />
     <Content Include="Examples\Example1\more.css" />
+    <Content Include="Examples\Example2\viewport.html">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Compile Include="html2pdf.js" />
   </ItemGroup>
@@ -68,6 +71,7 @@
     <Folder Include="Examples\" />
     <Folder Include="Examples\Example1\" />
     <Folder Include="Converter\" />
+    <Folder Include="Examples\Example2\" />
     <Folder Include="TestOutput\" />
     <Folder Include="Tests\" />
     <Folder Include="Tests\CheckSum\" />

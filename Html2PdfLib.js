@@ -54,11 +54,14 @@ module.exports = {
     * @param {string} marginbottom Bottom margin, accepts values labeled with units, possible units: px, in, cm, mm.
     * @param {string} marginleft Left margin, accepts values labeled with units, possible units: px, in, cm, mm.
     * @param {boolean} emulateScreen Changes the CSS media type of the page to 'screen', default is 'print'.
+    * @param {number} viewportheight Viewport: set page height in pixels
+    * @param {number} viewportwith Viewport: set page width in pixels.
     * @returns {Promise<boolean>} Success
     */
     convertHtml: async function (html, css, pdf, scale, displayHeaderFooter, headerTemplate, footerTemplate,
         printBackground, landscape, pageRanges, format, width, height,
-        margintop, marginright, marginbottom, marginleft, emulateScreen) {
+        margintop, marginright, marginbottom, marginleft, emulateScreen,
+        viewportheight, viewportwith) {
 
         var result = false;
         if (!html) throw new Error("The html-parameter must not be empty!");
@@ -107,7 +110,17 @@ module.exports = {
                 pdfOptions.margin = margin;
             }
 
-            browser = await puppeteer.launch();
+            if (typeof viewportheight === "undefined") viewportheight = 1024;
+            if (typeof viewportwith === "undefined") viewportwith = 1200;
+
+            browser = await puppeteer.launch({
+                headless: true,
+                defaultViewport: {
+                    height: viewportheight,
+                    width: viewportwith
+                }
+            });
+
             const page = await browser.newPage();
 
             if (typeof emulateScreen !== "undefined" && emulateScreen === true) {
