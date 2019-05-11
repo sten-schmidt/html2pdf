@@ -69,6 +69,12 @@ HTML template for the print header. Should be valid HTML markup with following c
 #### --footerTemplate=HTML
 HTML template for the print footer. Should be valid HTML markup with following classes used to inject printing values into them: 'date' formatted print date, 'title' document title, 'url document location, 'pageNumber' current page number, 'totalPages' total pages in the document.
 
+#### --viewportheight
+Viewport: set page height in pixels, default 1024
+
+#### --viewportwidth
+Viewport: set page width in pixels, default 1200
+
 #### --loglevel=LOGLEVEL
 Set loglevel, possible loglevels are: debug, info, error, fatal, off. Default is info.
 
