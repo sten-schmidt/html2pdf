@@ -19,7 +19,7 @@ describe('Html2PdfLib', () => {
         var fileContent2 = '';
         var lines = fileContent.split(/\r?\n/);
         for (var i = 0; i < lines.length; i++) {
-
+            
             if (!lines[i].startsWith('/CreationDate') &&
                 !lines[i].startsWith('/ModDate')) {
                 fileContent2 += lines[i];
