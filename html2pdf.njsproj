@@ -72,6 +72,7 @@
     <Folder Include="Examples\Example1\" />
     <Folder Include="Converter\" />
     <Folder Include="Examples\Example2\" />
+    <Folder Include="Editor\" />
     <Folder Include="TestOutput\" />
     <Folder Include="Tests\" />
     <Folder Include="Tests\CheckSum\" />
@@ -83,6 +84,9 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Converter\PuppeteerConverter.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Editor\Editor.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Tests\CheckSum\CheckSumTests.ts">
