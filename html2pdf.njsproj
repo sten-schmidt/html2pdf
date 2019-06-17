@@ -66,6 +66,7 @@
     </Content>
     <Content Include="package.json" />
     <Compile Include="html2pdf.js" />
+    <Content Include="RunAllTest.ps1" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Examples\" />
@@ -77,6 +78,7 @@
     <Folder Include="Tests\" />
     <Folder Include="Tests\CheckSum\" />
     <Folder Include="Tests\HtmlPrintLib\" />
+    <Folder Include="Tests\PdfLib\" />
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +96,10 @@
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Tests\HtmlPrintLib\Html2PdfLibTests.ts">
+      <SubType>Code</SubType>
+      <TestFramework>Jasmine</TestFramework>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tests\PdfLib\PdfLibApiTest1.ts">
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>

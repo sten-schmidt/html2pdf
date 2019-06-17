@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "description": "A simple commandline HTML to PDF converter using node and puppeteer",
   "main": "html2pdf.js",
-  "scripts": { "test": "jasmine" },
+  "scripts": {
+    "test": "jasmine"
+  },
   "author": "Sten Schmidt",
   "license": "MIT",
   "dependencies": {
     "@log4js-node/log4js-api": "^1.0.0",
+    "@types/jasmine": "^3.3.13",
     "file-url": "^2.0.2",
     "log4js": "^2.10.0",
     "optimist": "^0.6.1",
-    "puppeteer": "^1.13.0"
+    "pdf-lib": "^0.6.3",
+    "puppeteer": "^1.17.0"
   },
   "devDependencies": {
     "@types/jasmine": "^3.3.12",

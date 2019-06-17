@@ -27,7 +27,7 @@ describe('Html2PdfLib', () => {
 
         var checksum = new CheckSum();
         var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
-        expect(chksum).toBe("4aa8736791d977e8127b78afec61b5bb2d61528b");
+        expect(chksum).toBe("47648a600cc82a60c504020d995019788181b051");
 
     });
 
@@ -54,7 +54,7 @@ describe('Html2PdfLib', () => {
 
         var checksum = new CheckSum();
         var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
-        expect(chksum).toBe("f72e95bc49f7b1c848c4fcc57696657a46d99fba");
+        expect(chksum).toBe("1902cdaba32a48690346c8b369aafa8ec7664172");
 
     });
 
@@ -82,7 +82,7 @@ describe('Html2PdfLib', () => {
 
         var checksum = new CheckSum();
         var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
-        expect(chksum).toBe("11f443b6045ba7784fec1c0c3b885e21ec7acfae");
+        expect(chksum).toBe("5161c36a766396f13d4f0914352e142b5f202d87");
 
     });
 });
