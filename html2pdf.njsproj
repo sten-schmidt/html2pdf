@@ -58,10 +58,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Content Include="BuildExamples.ps1" />
-    <Content Include="Examples\Example1\index.css" />
-    <Content Include="Examples\Example1\index.html" />
-    <Content Include="Examples\Example1\more.css" />
-    <Content Include="Examples\Example2\viewport.html">
+    <Content Include="TestInput\Example1\index.css" />
+    <Content Include="TestInput\Example1\index.html" />
+    <Content Include="TestInput\Example1\more.css" />
+    <Content Include="TestInput\Example2\viewport.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="package.json" />
@@ -69,10 +69,10 @@
     <Content Include="RunAllTest.ps1" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Examples\" />
-    <Folder Include="Examples\Example1\" />
+    <Folder Include="TestInput\" />
+    <Folder Include="TestInput\Example1\" />
     <Folder Include="Converter\" />
-    <Folder Include="Examples\Example2\" />
+    <Folder Include="TestInput\Example2\" />
     <Folder Include="Editor\" />
     <Folder Include="TestOutput\" />
     <Folder Include="Tests\" />

@@ -5,8 +5,8 @@ import { CheckSum } from '../../Tools/CheckSum';
 describe('Html2PdfLib', () => {
     it('example1_More_CSS', async () => {
 
-        var html = path.resolve(__dirname, '../..', 'Examples', 'Example1', 'index.html');
-        var css = path.resolve(__dirname, '../..', 'Examples', 'Example1', 'more.css');
+        var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
+        var css = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'more.css');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_More_CSS.pdf');
 
         const html2PdfLib = require('../../Html2PdfLib');
@@ -33,7 +33,7 @@ describe('Html2PdfLib', () => {
 
     it('example1_No_seperate_CSS', async () => {
 
-        var html = path.resolve(__dirname, '../..', 'Examples', 'Example1', 'index.html');
+        var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_No_seperate_CSS.pdf');
 
         const html2PdfLib = require('../../Html2PdfLib');
@@ -60,7 +60,7 @@ describe('Html2PdfLib', () => {
 
     it('example2_viewport', async () => {
 
-        var html = path.resolve(__dirname, '../..', 'Examples', 'Example2', 'viewport.html');
+        var html = path.resolve(__dirname, '../..', 'TestInput', 'Example2', 'viewport.html');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example2_viewport.pdf');
 
         const html2PdfLib = require('../../Html2PdfLib');
