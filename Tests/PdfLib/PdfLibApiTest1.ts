@@ -1,4 +1,13 @@
-﻿import path = require('path');
+﻿import fs = require('fs');
+const {
+    PDFDocumentFactory,
+    PDFDocumentWriter,
+    StandardFonts,
+    drawLinesOfText,
+    drawImage,
+    drawRectangle,
+} = require('pdf-lib');
+import path = require('path');
 import { CheckSum } from '../../Tools/CheckSum';
 import { PdfTools } from '../../Tools/PdfTools';
 
@@ -8,20 +17,47 @@ describe('PdfLibTests', () => {
         var examplePDF01 = path.resolve(__dirname, '../..', 'TestInput', 'ExamplePDFs', 'ExamplePDF_01.pdf');
         var outputPDF = path.resolve(__dirname, '../..', 'TestOutput', 'PdfLibTests_EditExistingPdf_WriteText.pdf');
 
-        //var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
-        //var css = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'more.css');
-        //var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_More_CSS.pdf');
+        //Cleanup
+        if (fs.existsSync(outputPDF)) fs.unlinkSync(outputPDF);
+        expect(fs.existsSync(outputPDF)).toBeFalsy();
 
-        //const html2PdfLib = require('../../Html2PdfLib');
-        //const result = await html2PdfLib.convertHtml(html, css, pdf);
+        const pdfDoc = PDFDocumentFactory.load(fs.readFileSync(examplePDF01));
 
-        //expect(result).toBe(true);
+        const [fontRef, font] = pdfDoc.embedStandardFont(
+            StandardFonts.TimesRomanItalic,
+        );
 
-        //expect(false).toBe(true);
+        const FONT_NAME = font.fontName;
 
+        const pages = pdfDoc.getPages();
+
+        const existingPage = pages[0].addFontDictionary(FONT_NAME, fontRef);
+
+        const newContentStream = pdfDoc.createContentStream(
+            drawLinesOfText(
+                //['This text was added', 'with JavaScript!'], //Multiline
+                ['This text was added with JavaScript!'],
+                {
+                    x: 250,
+                    y: 750,
+                    font: FONT_NAME,
+                    size: 12,
+                    colorRgb: [1, 0, 0],
+
+                },
+            ),
+        );
+
+        existingPage.addContentStreams(pdfDoc.register(newContentStream));
+        const pdfBytes = PDFDocumentWriter.saveToBytes(pdfDoc);
+        fs.writeFileSync(outputPDF, pdfBytes);
+        
         var checksum = new CheckSum();
-        var chksum = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(examplePDF01), 'sha1', 'hex');
-        expect(chksum).toBe("3187af6994ac92e71901e8fc36086d5393966e65");
+        var chksumInput = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(examplePDF01), 'sha1', 'hex');
+        expect(chksumInput).toBe("3187af6994ac92e71901e8fc36086d5393966e65");
+
+        var chksumOutput = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(outputPDF), 'sha1', 'hex');
+        expect(chksumOutput).toBe("484989705d8cfca98e68b57784b9f793512ef949");
 
     });
 });

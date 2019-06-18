@@ -1,4 +1,5 @@
 ﻿import path = require('path');
+import fs = require('fs');
 import { CheckSum } from '../../Tools/CheckSum';
 import { PdfTools } from '../../Tools/PdfTools';
 
@@ -8,6 +9,10 @@ describe('Html2PdfLib', () => {
         var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
         var css = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'more.css');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_More_CSS.pdf');
+
+        //Cleanup
+        if (fs.existsSync(pdf)) fs.unlinkSync(pdf);
+        expect(fs.existsSync(pdf)).toBeFalsy();
 
         const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, css, pdf);
@@ -25,6 +30,10 @@ describe('Html2PdfLib', () => {
         var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_No_seperate_CSS.pdf');
 
+        //Cleanup
+        if (fs.existsSync(pdf)) fs.unlinkSync(pdf);
+        expect(fs.existsSync(pdf)).toBeFalsy();
+
         const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, undefined, pdf);
 
@@ -40,6 +49,10 @@ describe('Html2PdfLib', () => {
 
         var html = path.resolve(__dirname, '../..', 'TestInput', 'Example2', 'viewport.html');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example2_viewport.pdf');
+
+        //Cleanup
+        if (fs.existsSync(pdf)) fs.unlinkSync(pdf);
+        expect(fs.existsSync(pdf)).toBeFalsy();
 
         const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, undefined, pdf, undefined, undefined, undefined

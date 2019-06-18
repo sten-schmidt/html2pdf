@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
+const fs = require("fs");
 const CheckSum_1 = require("../../Tools/CheckSum");
 const PdfTools_1 = require("../../Tools/PdfTools");
 describe('Html2PdfLib', () => {
@@ -8,6 +9,10 @@ describe('Html2PdfLib', () => {
         var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
         var css = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'more.css');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_More_CSS.pdf');
+        //Cleanup
+        if (fs.existsSync(pdf))
+            fs.unlinkSync(pdf);
+        expect(fs.existsSync(pdf)).toBeFalsy();
         const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, css, pdf);
         expect(result).toBe(true);
@@ -18,6 +23,10 @@ describe('Html2PdfLib', () => {
     it('example1_No_seperate_CSS', async () => {
         var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example1_No_seperate_CSS.pdf');
+        //Cleanup
+        if (fs.existsSync(pdf))
+            fs.unlinkSync(pdf);
+        expect(fs.existsSync(pdf)).toBeFalsy();
         const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, undefined, pdf);
         expect(result).toBe(true);
@@ -28,6 +37,10 @@ describe('Html2PdfLib', () => {
     it('example2_viewport', async () => {
         var html = path.resolve(__dirname, '../..', 'TestInput', 'Example2', 'viewport.html');
         var pdf = path.resolve(__dirname, '../..', 'TestOutput', 'example2_viewport.pdf');
+        //Cleanup
+        if (fs.existsSync(pdf))
+            fs.unlinkSync(pdf);
+        expect(fs.existsSync(pdf)).toBeFalsy();
         const html2PdfLib = require('../../Html2PdfLib');
         const result = await html2PdfLib.convertHtml(html, undefined, pdf, undefined, undefined, undefined, undefined, undefined, true);
         expect(result).toBe(true);
