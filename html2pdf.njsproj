@@ -67,6 +67,7 @@
     <Content Include="package.json" />
     <Compile Include="html2pdf.js" />
     <Content Include="RunAllTest.ps1" />
+    <Content Include="TestInput\ExamplePDFs\ExamplePDF_01.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TestInput\" />
@@ -74,6 +75,7 @@
     <Folder Include="Converter\" />
     <Folder Include="TestInput\Example2\" />
     <Folder Include="Editor\" />
+    <Folder Include="TestInput\ExamplePDFs\" />
     <Folder Include="TestOutput\" />
     <Folder Include="Tests\" />
     <Folder Include="Tests\CheckSum\" />
@@ -104,6 +106,9 @@
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Tools\CheckSum.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Tools\PdfTools.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿import path = require('path');
-import fs = require('fs');
 import { CheckSum } from '../../Tools/CheckSum';
+import { PdfTools } from '../../Tools/PdfTools';
 
 describe('Html2PdfLib', () => {
     it('example1_More_CSS', async () => {
@@ -14,19 +14,8 @@ describe('Html2PdfLib', () => {
 
         expect(result).toBe(true);
 
-        var fileContent = fs.readFileSync(pdf, 'latin1');
-        var fileContent2 = '';
-        var lines = fileContent.split(/\r?\n/);
-        for (var i = 0; i < lines.length; i++) {
-            
-            if (!lines[i].startsWith('/CreationDate') &&
-                !lines[i].startsWith('/ModDate')) {
-                fileContent2 += lines[i];
-            }
-        }
-
         var checksum = new CheckSum();
-        var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
+        var chksum = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(pdf), 'sha1', 'hex');
         expect(chksum).toBe("47648a600cc82a60c504020d995019788181b051");
 
     });
@@ -41,19 +30,8 @@ describe('Html2PdfLib', () => {
 
         expect(result).toBe(true);
 
-        var fileContent = fs.readFileSync(pdf, 'latin1');
-        var fileContent2 = '';
-        var lines = fileContent.split(/\r?\n/);
-        for (var i = 0; i < lines.length; i++) {
-
-            if (!lines[i].startsWith('/CreationDate') &&
-                !lines[i].startsWith('/ModDate')) {
-                fileContent2 += lines[i];
-            }
-        }
-
         var checksum = new CheckSum();
-        var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
+        var chksum = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(pdf), 'sha1', 'hex');
         expect(chksum).toBe("1902cdaba32a48690346c8b369aafa8ec7664172");
 
     });
@@ -68,20 +46,9 @@ describe('Html2PdfLib', () => {
             , undefined, undefined, true);
 
         expect(result).toBe(true);
-
-        var fileContent = fs.readFileSync(pdf, 'latin1');
-        var fileContent2 = '';
-        var lines = fileContent.split(/\r?\n/);
-        for (var i = 0; i < lines.length; i++) {
-
-            if (!lines[i].startsWith('/CreationDate') &&
-                !lines[i].startsWith('/ModDate')) {
-                fileContent2 += lines[i];
-            }
-        }
-
+        
         var checksum = new CheckSum();
-        var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
+        var chksum = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(pdf), 'sha1', 'hex');
         expect(chksum).toBe("5161c36a766396f13d4f0914352e142b5f202d87");
 
     });

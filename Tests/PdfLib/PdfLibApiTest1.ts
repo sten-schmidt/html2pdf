@@ -1,9 +1,12 @@
 ﻿import path = require('path');
-import fs = require('fs');
 import { CheckSum } from '../../Tools/CheckSum';
+import { PdfTools } from '../../Tools/PdfTools';
 
 describe('PdfLibTests', () => {
     it('EditExistingPdf_WriteText', async () => {
+
+        var examplePDF01 = path.resolve(__dirname, '../..', 'TestInput', 'ExamplePDFs', 'ExamplePDF_01.pdf');
+        var outputPDF = path.resolve(__dirname, '../..', 'TestOutput', 'PdfLibTests_EditExistingPdf_WriteText.pdf');
 
         //var html = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'index.html');
         //var css = path.resolve(__dirname, '../..', 'TestInput', 'Example1', 'more.css');
@@ -14,20 +17,11 @@ describe('PdfLibTests', () => {
 
         //expect(result).toBe(true);
 
-        //var fileContent = fs.readFileSync(pdf, 'latin1');
-        //var fileContent2 = '';
-        //var lines = fileContent.split(/\r?\n/);
-        //for (var i = 0; i < lines.length; i++) {
+        //expect(false).toBe(true);
 
-        //    if (!lines[i].startsWith('/CreationDate') &&
-        //        !lines[i].startsWith('/ModDate')) {
-        //        fileContent2 += lines[i];
-        //    }
-        //}
-
-        //var checksum = new CheckSum();
-        //var chksum = checksum.getCheckSum(fileContent2, 'sha1', 'hex');
-        //expect(chksum).toBe("4aa8736791d977e8127b78afec61b5bb2d61528b");
+        var checksum = new CheckSum();
+        var chksum = checksum.getCheckSum(PdfTools.ReadFileWithoutDateFlags(examplePDF01), 'sha1', 'hex');
+        expect(chksum).toBe("3187af6994ac92e71901e8fc36086d5393966e65");
 
     });
 });
