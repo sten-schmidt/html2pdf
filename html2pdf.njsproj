@@ -58,6 +58,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Content Include="BuildExamples.ps1" />
+    <Content Include="spec\support\jasmine.json" />
     <Content Include="TestInput\Example1\index.css" />
     <Content Include="TestInput\Example1\index.html" />
     <Content Include="TestInput\Example1\more.css" />
@@ -70,6 +71,8 @@
     <Content Include="TestInput\ExamplePDFs\ExamplePDF_01.pdf" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="spec\" />
+    <Folder Include="spec\support\" />
     <Folder Include="TestInput\" />
     <Folder Include="TestInput\Example1\" />
     <Folder Include="Converter\" />
