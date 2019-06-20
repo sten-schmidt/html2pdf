@@ -80,10 +80,9 @@
     <Folder Include="Editor\" />
     <Folder Include="TestInput\ExamplePDFs\" />
     <Folder Include="TestOutput\" />
-    <Folder Include="Tests\" />
-    <Folder Include="Tests\CheckSum\" />
-    <Folder Include="Tests\HtmlPrintLib\" />
-    <Folder Include="Tests\PdfLib\" />
+    <Folder Include="spec\CheckSum\" />
+    <Folder Include="spec\HtmlPrintLib\" />
+    <Folder Include="spec\PdfLib\" />
     <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
@@ -96,15 +95,15 @@
     <TypeScriptCompile Include="Editor\Editor.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Tests\CheckSum\CheckSumTests.ts">
+    <TypeScriptCompile Include="spec\CheckSum\CheckSumTests.ts">
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Tests\HtmlPrintLib\Html2PdfLibTests.ts">
+    <TypeScriptCompile Include="spec\HtmlPrintLib\Html2PdfLibTests.ts">
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Tests\PdfLib\PdfLibApiTest1.ts">
+    <TypeScriptCompile Include="spec\PdfLib\PdfLibApiTest1.ts">
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>
