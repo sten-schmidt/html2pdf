@@ -103,7 +103,7 @@
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="spec\PdfLib\PdfLibApiTest1.ts">
+    <TypeScriptCompile Include="spec\PdfLib\PdfLibApiTests.ts">
       <SubType>Code</SubType>
       <TestFramework>Jasmine</TestFramework>
     </TypeScriptCompile>

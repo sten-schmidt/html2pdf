@@ -37,4 +37,4 @@ describe('PdfLibTests', () => {
         expect(chksumOutput).toBe("484989705d8cfca98e68b57784b9f793512ef949");
     });
 });
-//# sourceMappingURL=PdfLibApiTest1.js.map
+//# sourceMappingURL=PdfLibApiTests.js.map
