@@ -10,11 +10,12 @@
   "license": "MIT",
   "dependencies": {
     "@log4js-node/log4js-api": "^1.0.0",
+    "@pdf-lib/fontkit": "0.0.4",
     "@types/jasmine": "^3.3.13",
     "file-url": "^2.0.2",
     "log4js": "^2.10.0",
     "optimist": "^0.6.1",
-    "pdf-lib": "^0.6.3",
+    "pdf-lib": "^1.0.0-beta.3",
     "puppeteer": "^1.17.0"
   },
   "devDependencies": {
